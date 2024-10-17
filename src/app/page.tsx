@@ -1,28 +1,33 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Dashboard() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   return (
-    <div className="dashboard">
+    <div className={`dashboard ${isCollapsed ? 'collapsed' : ''}`}>
       <header className="header">
-        <button className="icon-button" aria-label="Menu">
+        <button className="icon-button" aria-label="Menu" onClick={toggleSidebar}>
           ☰
         </button>
-        <h1>Dashboard</h1>
+        <h1 className='dashboard-home'>Dashboard</h1>
         <div className="header-actions">
           <button className="icon-button" aria-label="Notifications">
             🔔
           </button>
           <button className="icon-button" aria-label="User profile">
-            👤
+            Profile
           </button>
         </div>
       </header>
       <div className="main-container">
-        <aside className="sidebar">
+        <aside className={`sidebar ${isCollapsed ? 'hidden' : ''}`}>
           <nav>
             <ul>
-              <li><a href="#" className="active">Home</a></li>
               <li><a href="#">Analytics</a></li>
               <li><a href="#">Reports</a></li>
               <li><a href="#">Settings</a></li>

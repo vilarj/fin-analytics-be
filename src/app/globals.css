@@ -1,112 +1,148 @@
 /* Dashboard */
 .dashboard {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  .header h1 {
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  .header-actions {
-    margin-left: auto;
-    display: flex;
-  }
-  .icon-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    color: #4b5563;
-    transition: color 0.2s;
-    font-size: 1.25rem;
-  }
-  .icon-button:hover {
-    color: #1f2937;
-  }
-  .main-container {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
-  .sidebar {
-    width: 250px;
-    background-color: #f9fafb;
-    padding: 1rem;
-    border-right: 1px solid #e2e8f0;
-  }
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  .sidebar li {
-    margin-bottom: 0.5rem;
-  }
-  .sidebar a {
-    display: block;
-    padding: 0.5rem;
-    color: #4b5563;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s;
-  }
-  .sidebar a:hover, .sidebar a.active {
-    background-color: #e2e8f0;
-    color: #1f2937;
-  }
-  .main-content {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
-  }
-  .search-container {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-  .search-input {
-    width: 100%;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-  }
-  .search-icon {
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #9ca3af;
-  }
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  .card {
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  }
-  .card h2 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #4b5563;
-    margin-top: 0;
-  }
-  .card-value {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header h1 {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #4b5563;
+  transition: color 0.2s;
+  font-size: 1.25rem;
+}
+
+.icon-button:hover {
+  color: #1f2937;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-right: 1px solid #e2e8f0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem;
+  color: #4b5563;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: lightblue;
+  color: #1f2937;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-top: 0;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0;
+}
+
+.dashboard.collapsed .sidebar {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.sidebar {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.hidden {
+  display: none;
+}
+
 /* Dashboard ends */
