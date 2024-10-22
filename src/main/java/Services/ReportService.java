@@ -2,13 +2,12 @@ package Services;
 
 import Entities.Report;
 import org.springframework.stereotype.Service;
-
 import java.sql.*;
 import java.time.LocalDate;
 
 @Service
 public class ReportService {
-    private static final String DB_URL = "jdbc:sqlite:./Database/mydb.db"; // TODO: Change this to the actual
+    private static final String DB_URL = "jdbc:sqlite:./Database/FinAnalyticsDB.db";
 
     public Report GetReport(long reportId) {
         String query = "SELECT reportId, userId, details, lastGeneratedIn FROM Report WHERE reportId = ?";
@@ -25,13 +24,11 @@ public class ReportService {
                     long userId = rs.getLong("UserId");
                     String[] details = rs.getString("Details").split(",");
                     LocalDate lastGeneratedIn = LocalDate.parse(rs.getString("LastGeneratedIn"));
-
                     report = new Report(id, userId, details);
                     report.setLastGeneratedIn(lastGeneratedIn);
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new RuntimeException("Error querying the database", e);
         }
 
