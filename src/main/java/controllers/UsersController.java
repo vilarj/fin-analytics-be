@@ -18,8 +18,8 @@ public class UsersController {
     private UserService userService;
 
     @PostMapping("/createUser")
-    public User CreateUser(String fullName, LocalDate DoB, String phone, String address, String email) {
-        return userService.CreateUser(fullName, DoB, phone, address, email);
+    public User CreateUser(String fullName, LocalDate DoB, String phone, String address, String email, String company) {
+        return userService.CreateUser(fullName, DoB, phone, address, email, company);
     }
 
     @GetMapping("/getUser")
