@@ -1,0 +1,16 @@
+/* .hero-section {
+    background-image: "url(/path/to/your/image.jpg)",
+          backgroundSize: "cover",
+          height: "100vh",
+          color: "#fff",
+} */
+.app {
+  background-color: red;
+}
+.call-to-action li a {
+  transition: background-color 0.3s ease;
+}
+.cta-buttons li a:hover {
+  background-color: #007bff;
+  color: white;
+}
