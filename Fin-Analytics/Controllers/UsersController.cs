@@ -1,5 +1,6 @@
 using Fin_Analytics.FinAnalyticsDbContext;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fin_Analytics.Controllers
 {
@@ -16,13 +17,14 @@ namespace Fin_Analytics.Controllers
 
 
         [HttpGet]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            return Ok("Get Users");
+            var users = await _context.Users.ToListAsync();
+            return Ok(users);
         }
 
         [HttpPost]
-        public IActionResult CreateUser()
+        public async Task<IActionResult> CreateUser()
         {
             return Ok("Create Users");
         }
