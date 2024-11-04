@@ -1,4 +1,5 @@
 using Fin_Analytics.FinAnalyticsDbContext;
+using Fin_Analytics.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,9 +25,16 @@ namespace Fin_Analytics.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser()
+        public async Task<IActionResult> CreateUser([FromBody] Users newUser)
         {
-            return Ok("Create Users");
+            if (newUser == null)
+            {
+                return BadRequest("User data is null");
+            }
+
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetUsers), new { id = newUser.UserId }, newUser);
         }
     }
 }
