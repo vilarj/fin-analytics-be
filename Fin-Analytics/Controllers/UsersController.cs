@@ -103,5 +103,51 @@ namespace Fin_Analytics.Controllers
 
             return Ok(createdUsers);
         }
+
+        /// <summary>
+        /// Updates specific details of a user, such as address, company, full name, or phone.
+        /// </summary>
+        /// <param name="userId">The ID of the user to update.</param>
+        /// <param name="updatedUser">An object containing the fields to update.</param>
+        /// <returns>
+        /// Returns an HTTP 200 OK response with a success message if the user is updated successfully.
+        /// Returns an HTTP 404 Not Found response if the user is not found.
+        /// </returns>
+        [HttpPut("{userId}")]
+        public async Task<IActionResult> UpdateUser(int userId, [FromBody] Users updatedUser)
+        {
+            var result = await _usersService.UpdateUser(userId, updatedUser);
+            return result ?? NotFound($"User with ID {userId} not found.");
+        }
+
+        /// <summary>
+        /// Deletes a single user by ID.
+        /// </summary>
+        /// <param name="userId">The ID of the user to delete.</param>
+        /// <returns>
+        /// Returns an HTTP 200 OK response with a success message if the user is deleted successfully.
+        /// Returns an HTTP 404 Not Found response if the user is not found.
+        /// </returns>
+        [HttpDelete("{userId}")]
+        public async Task<IActionResult> DeleteUser(int userId)
+        {
+            var result = await _usersService.DeleteUser(userId);
+            return result ?? NotFound($"User with ID {userId} not found.");
+        }
+
+        /// <summary>
+        /// Deletes multiple users by their IDs.
+        /// </summary>
+        /// <param name="userIds">A list of user IDs to delete.</param>
+        /// <returns>
+        /// Returns an HTTP 200 OK response with a success message if users are deleted successfully.
+        /// Returns an HTTP 404 Not Found response if none of the specified users are found.
+        /// </returns>
+        [HttpDelete("batch")]
+        public async Task<IActionResult> DeleteUsers([FromBody] List<int> userIds)
+        {
+            var result = await _usersService.DeleteUsers(userIds);
+            return result ?? NotFound("None of the specified users were found.");
+        }
     }
 }
