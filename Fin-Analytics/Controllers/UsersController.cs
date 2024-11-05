@@ -18,14 +18,16 @@ namespace Fin_Analytics.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UsersService _usersService;
+        private readonly ILogger<UsersController> _logger;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersController"/> class.
         /// </summary>
         /// <param name="usersService">The user service.</param>
-        public UsersController(UsersService usersService)
+        public UsersController(UsersService usersService, ILogger<UsersController> logger)
         {
             _usersService = usersService;
+            _logger = logger;
         }
 
         /// <summary>
@@ -39,6 +41,8 @@ namespace Fin_Analytics.Controllers
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUser(int userId)
         {
+            _logger.LogInformation("Getting user with ID {UserId}", userId);
+
             var user = await _usersService.GetUser(userId);
 
             if (user == null)
@@ -58,6 +62,8 @@ namespace Fin_Analytics.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
+            _logger.LogInformation("Getting all users");
+
             var users = await _usersService.GetUsers();
 
             return Ok(users);
@@ -76,6 +82,8 @@ namespace Fin_Analytics.Controllers
         {
             if (newUser == null)
             {
+                _logger.LogInformation($"Bad Request:\nUser data is null.");
+
                 return BadRequest("User data is null");
             }
 
@@ -97,10 +105,14 @@ namespace Fin_Analytics.Controllers
         {
             if (newUsers == null || newUsers.Count == 0)
             {
+                _logger.LogInformation("Bad Request:\nUser data is null or empty");
+
                 return BadRequest("User data is null or empty");
             }
 
             var createdUsers = await _usersService.CreateUsers(newUsers);
+
+            _logger.LogInformation("A batch of users were created successfully.");
 
             return Ok(createdUsers);
         }
@@ -117,7 +129,10 @@ namespace Fin_Analytics.Controllers
         [HttpPut("{userId}")]
         public async Task<IActionResult> UpdateUser(int userId, [FromBody] Users updatedUser)
         {
+            _logger.LogInformation($"Updating UserId {userId}.");
+
             var result = await _usersService.UpdateUser(userId, updatedUser);
+
             return result ?? NotFound($"User with ID {userId} not found.");
         }
 
@@ -132,7 +147,10 @@ namespace Fin_Analytics.Controllers
         [HttpDelete("{userId}")]
         public async Task<IActionResult> DeleteUser(int userId)
         {
+            _logger.LogInformation($"Deleting UserId {userId}.");
+
             var result = await _usersService.DeleteUser(userId);
+
             return result ?? NotFound($"User with ID {userId} not found.");
         }
 
@@ -147,7 +165,10 @@ namespace Fin_Analytics.Controllers
         [HttpDelete("batch")]
         public async Task<IActionResult> DeleteUsers([FromBody] List<int> userIds)
         {
+            _logger.LogInformation($"Deleting a batch of users.");
+
             var result = await _usersService.DeleteUsers(userIds);
+
             return result ?? NotFound("None of the specified users were found.");
         }
     }
