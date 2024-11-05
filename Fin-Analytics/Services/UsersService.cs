@@ -57,6 +57,7 @@ namespace Fin_Analytics.Services
         /// </returns>
         public async Task<Users> CreateUser(Users newUser)
         {
+            newUser.CreatedOn = DateTime.Now;
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
 

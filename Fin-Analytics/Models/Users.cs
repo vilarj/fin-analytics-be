@@ -31,7 +31,7 @@ namespace Fin_Analytics.Models
         /// Gets or sets the date of birth of the user.
         /// Required.
         /// </summary>
-        public DateTime? DoB { get; set; }
+        public required DateTime DoB { get; set; }
 
         /// <summary>
         /// Gets or sets the phone number of the user.
@@ -56,12 +56,12 @@ namespace Fin_Analytics.Models
         /// Gets or sets the company of the user.
         /// Required.
         /// </summary>
-        public required string Company { get; set; }
+        public string? Company { get; set; }
 
 
         /// <summary>
         /// Gets or sets the date and time when the user was created.
         /// </summary>
-        public DateTime? CreatedOn { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }
