@@ -1,5 +1,5 @@
-using Fin_Analytics;
 using Fin_Analytics.FinAnalyticsDbContext;
+using Fin_Analytics.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
