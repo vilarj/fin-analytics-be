@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fin-Analytics", "Fin-Analytics\Fin-Analytics.csproj", "{88ADAB4C-5B48-4062-A833-AD20D9A3F008}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fin-Analytics.Tests", "Fin-Analytics.Tests\Fin-Analytics.Tests.csproj", "{FC925E12-9EB7-464D-AD06-726B9A541576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{88ADAB4C-5B48-4062-A833-AD20D9A3F008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88ADAB4C-5B48-4062-A833-AD20D9A3F008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88ADAB4C-5B48-4062-A833-AD20D9A3F008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC925E12-9EB7-464D-AD06-726B9A541576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC925E12-9EB7-464D-AD06-726B9A541576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC925E12-9EB7-464D-AD06-726B9A541576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC925E12-9EB7-464D-AD06-726B9A541576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
