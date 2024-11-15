@@ -1,4 +1,4 @@
-using Fin_Analytics.FinAnalyticsDbContext;
+using Fin_Analytics.FinAnalyticsContext;
 using Fin_Analytics.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;

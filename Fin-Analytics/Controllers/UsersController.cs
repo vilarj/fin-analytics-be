@@ -24,6 +24,7 @@ namespace Fin_Analytics.Controllers
         /// Initializes a new instance of the <see cref="UsersController"/> class.
         /// </summary>
         /// <param name="usersService">The user service.</param>
+        /// <param name="logger"></param>
         public UsersController(UsersService usersService, ILogger<UsersController> logger)
         {
             _usersService = usersService;
@@ -38,7 +39,7 @@ namespace Fin_Analytics.Controllers
         /// Returns an HTTP 200 OK response with the user information if found.
         /// Returns an HTTP 404 Not Found response if the user is not found.
         /// </returns>
-        [HttpGet("{userId}")]
+        [HttpGet("{userId:int}")]
         public async Task<IActionResult> GetUser(int userId)
         {
             _logger.LogInformation("Getting user with ID {UserId}", userId);
@@ -126,7 +127,7 @@ namespace Fin_Analytics.Controllers
         /// Returns an HTTP 200 OK response with a success message if the user is updated successfully.
         /// Returns an HTTP 404 Not Found response if the user is not found.
         /// </returns>
-        [HttpPut("{userId}")]
+        [HttpPut("{userId:int}")]
         public async Task<IActionResult> UpdateUser(int userId, [FromBody] Users updatedUser)
         {
             _logger.LogInformation($"Updating UserId {userId}.");
@@ -144,7 +145,7 @@ namespace Fin_Analytics.Controllers
         /// Returns an HTTP 200 OK response with a success message if the user is deleted successfully.
         /// Returns an HTTP 404 Not Found response if the user is not found.
         /// </returns>
-        [HttpDelete("{userId}")]
+        [HttpDelete("{userId:int}")]
         public async Task<IActionResult> DeleteUser(int userId)
         {
             _logger.LogInformation($"Deleting UserId {userId}.");

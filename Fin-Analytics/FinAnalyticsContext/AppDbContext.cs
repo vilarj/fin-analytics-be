@@ -1,7 +1,7 @@
 using Fin_Analytics.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fin_Analytics.FinAnalyticsDbContext
+namespace Fin_Analytics.FinAnalyticsContext
 {
     /// <summary>
     /// Represents the database context for the application.
@@ -12,7 +12,9 @@ namespace Fin_Analytics.FinAnalyticsDbContext
         /// Initializes a new instance of the <see cref="AppDbContext"/> class.
         /// </summary>
         /// <param name="options">The database context options.</param>
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
 
         /// <summary>
         /// Gets or sets the DbSet for the <see cref="Users"/> entity.
