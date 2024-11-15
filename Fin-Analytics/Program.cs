@@ -6,7 +6,7 @@ using Serilog;
 var timestamp = DateTime.Now.ToString("yyyy-MM-dd");
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.File($"./Logging/log-{timestamp}.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.File($"./Logging/log-{timestamp}.log", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
