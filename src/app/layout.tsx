@@ -1,8 +1,8 @@
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
+import React from "react";
 import "./globals.css";
 import "./page.module.css";
-import React from "react";
 
 export const metadata: Metadata = {
   title: "Fin-Analytics",

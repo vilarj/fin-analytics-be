@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 export default function Dashboard() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -9,12 +9,16 @@ export default function Dashboard() {
   };
 
   return (
-    <div className={`dashboard ${isCollapsed ? 'collapsed' : ''}`}>
+    <div className={`dashboard ${isCollapsed ? "collapsed" : ""}`}>
       <header className="header">
-        <button className="icon-button" aria-label="Menu" onClick={toggleSidebar}>
+        <button
+          className="icon-button"
+          aria-label="Menu"
+          onClick={toggleSidebar}
+        >
           ☰
         </button>
-        <h1 className='dashboard-home'>Dashboard</h1>
+        <h1 className="dashboard-home">Dashboard</h1>
         <div className="header-actions">
           <button className="icon-button" aria-label="User profile">
             Profile
@@ -22,19 +26,31 @@ export default function Dashboard() {
         </div>
       </header>
       <div className="main-container">
-        <aside className={`sidebar ${isCollapsed ? 'hidden' : ''}`}>
+        <aside className={`sidebar ${isCollapsed ? "hidden" : ""}`}>
           <nav>
             <ul>
-              <li><a href="#">Analytics</a></li>
-              <li><a href="#">Reports</a></li>
-              <li><a href="#">Settings</a></li>
+              <li>
+                <a href="#">Analytics</a>
+              </li>
+              <li>
+                <a href="#">Reports</a>
+              </li>
+              <li>
+                <a href="#">Settings</a>
+              </li>
             </ul>
           </nav>
         </aside>
         <main className="main-content">
           <div className="search-container">
-            <span className="search-icon" aria-hidden="true">🔍</span>
-            <input type="text" placeholder="Search..." className="search-input" />
+            <span className="search-icon" aria-hidden="true">
+              🔍
+            </span>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search-input"
+            />
           </div>
           <div className="card-container">
             <div className="card">

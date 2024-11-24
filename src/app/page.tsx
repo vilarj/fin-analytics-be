@@ -1,15 +1,23 @@
 "use client";
 
+import { faListCheck, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./page.module.css";
+
 export default function App() {
   return (
-    <div className="app">
-      <div className="call-to-action">
+    <div className={styles.app}>
+      <div>
         <ul>
           <li>
-            <a href="">Get Started</a>
+            <a href="">
+              <FontAwesomeIcon icon={faListCheck} /> Get Started
+            </a>
           </li>
           <li>
-            <a href="">Request a Demo</a>
+            <a href="">
+              <FontAwesomeIcon icon={faUser} /> Login
+            </a>
           </li>
         </ul>
       </div>
