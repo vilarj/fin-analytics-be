@@ -2,6 +2,7 @@
 
 import { faListCheck, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function App() {
@@ -10,14 +11,14 @@ export default function App() {
       <div>
         <ul>
           <li>
-            <a href="">
+            <Link href="/">
               <FontAwesomeIcon icon={faListCheck} /> Get Started
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            <Link href="/login">
               <FontAwesomeIcon icon={faUser} /> Login
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
