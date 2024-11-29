@@ -1,0 +1,93 @@
+/* Global Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Navbar Styling */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLinks a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section Styling */
+.heroSection {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Features Section Styling */
+.featuresSection {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.headlineFeatures h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.featureCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+  font-size: 0.9rem;
+  color: #555;
+}
