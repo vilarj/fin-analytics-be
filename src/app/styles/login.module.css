@@ -112,3 +112,33 @@
 .link:hover {
   text-decoration: underline;
 }
+
+/* Toggle Group */
+.toggleGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.toggleButton {
+  flex: 1;
+  padding: 0.5rem;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #555;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0 0.25rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.toggleButton:hover {
+  background: #eee;
+}
+
+.activeToggle {
+  background: #6a11cb;
+  color: white;
+  border: 1px solid #6a11cb;
+}
