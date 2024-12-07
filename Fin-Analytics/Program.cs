@@ -17,6 +17,8 @@ builder.Host.UseSerilog();
 // Register controller services
 builder.Services.AddControllers();
 builder.Services.AddScoped<UsersService>();
+
+// Registering database services
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=../Database/FinAnalyticsDB.db"));
 

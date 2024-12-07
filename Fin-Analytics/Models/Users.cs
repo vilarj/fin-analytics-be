@@ -22,15 +22,44 @@ namespace Fin_Analytics.Models
         /// Required.
         /// </summary>
         /// <remarks>
-        /// This field stores the user's full name, which is used for display purposes.
+        /// This field stores the user's first name, which is used for display purposes.
         /// </remarks>
         [Required]
-        [Display(Name = "Full Name")]
+        [Display(Name = "First Name")]
         [DataType(DataType.Text)]
         [RegularExpression(@"^[a-zA-Z]+(?:\s[a-zA-Z]+)*$", ErrorMessage = "Full name must contain only letters.")]
-        [MinLength(3, ErrorMessage = "Full name must be at least 3 characters long.")]
-        [MaxLength(50, ErrorMessage = "Full name cannot be longer than 50 characters.")]
-        public required string FullName { get; set; }
+        [MinLength(3, ErrorMessage = "First name must be at least 3 characters long.")]
+        [MaxLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
+        public required string FirstName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the middle name of the user.
+        /// Required.
+        /// </summary>
+        /// <remarks>
+        /// This field stores the user's middle name, which is used for display purposes.
+        /// </remarks>
+        [Display(Name = "Middle Name")]
+        [DataType(DataType.Text)]
+        [RegularExpression(@"^[a-zA-Z]+(?:\s[a-zA-Z]+)*$", ErrorMessage = "Full name must contain only letters.")]
+        [MinLength(3, ErrorMessage = "Middle name must be at least 3 characters long.")]
+        [MaxLength(50, ErrorMessage = "Middle name cannot be longer than 50 characters.")]
+        public required string MiddleName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last name of the user.
+        /// Required.
+        /// </summary>
+        /// <remarks>
+        /// This field stores the user's last name, which is used for display purposes.
+        /// </remarks>
+        [Required]
+        [Display(Name = "LastName")]
+        [DataType(DataType.Text)]
+        [RegularExpression(@"^[a-zA-Z]+(?:\s[a-zA-Z]+)*$", ErrorMessage = "Full name must contain only letters.")]
+        [MinLength(3, ErrorMessage = "Last name must be at least 3 characters long.")]
+        [MaxLength(50, ErrorMessage = "Last name cannot be longer than 50 characters.")]
+        public required string LastName { get; set; }
 
         /// <summary>
         /// Gets or sets the date of birth of the user.
@@ -89,7 +118,6 @@ namespace Fin_Analytics.Models
         [Required]
         [StringLength(50, ErrorMessage = "Company cannot be longer than 50 characters.")]
         [DataType(DataType.Text)]
-        [RegularExpression(@"^[a-zA-Z0-9\s]+$", ErrorMessage = "Company must contain only letters and numbers.")]
         [MinLength(3, ErrorMessage = "Company must be at least 3 characters long.")]
         [MaxLength(50, ErrorMessage = "Company cannot be longer than 50 characters.")]
         public string? Company { get; set; }
@@ -101,5 +129,16 @@ namespace Fin_Analytics.Models
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime CreatedOn { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the hashed password of the user.
+        /// </summary>
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Hashed Password")]
+        [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
+        [MaxLength(35, ErrorMessage = "Password cannot be longer than 35 characters.")]
+        public required string HashedPassword { get; set; }
     }
 }

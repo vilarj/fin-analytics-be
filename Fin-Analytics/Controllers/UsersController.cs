@@ -17,8 +17,8 @@ namespace Fin_Analytics.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly UsersService _usersService;
         private readonly ILogger<UsersController> _logger;
+        private readonly UsersService _usersService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersController"/> class.
@@ -133,6 +133,25 @@ namespace Fin_Analytics.Controllers
             _logger.LogInformation($"Updating UserId {userId}.");
 
             var result = await _usersService.UpdateUser(userId, updatedUser);
+
+            return result ?? NotFound($"User with ID {userId} not found.");
+        }
+
+        /// <summary>
+        /// Updates specific details of a user, such as address, company, full name, or phone.
+        /// </summary>
+        /// <param name="userId">The ID of the user to update.</param>
+        /// <param name="updatedUser">An object containing the fields to update.</param>
+        /// <returns>
+        /// Returns an HTTP 200 OK response with a success message if the user is updated successfully.
+        /// Returns an HTTP 404 Not Found response if the user is not found.
+        /// </returns>
+        [HttpPut("UpdateFirst/{userId:int}")]
+        public async Task<IActionResult> UpdateFirstName(int userId, [FromBody] string firstName)
+        {
+            _logger.LogInformation($"Updating UserId {userId}.");
+
+            var result = await _usersService.UpdateFirstName(userId, firstName);
 
             return result ?? NotFound($"User with ID {userId} not found.");
         }
