@@ -106,14 +106,14 @@ namespace Fin_Analytics.Services
             }
 
             // Add only unique users to the database
-            if (usersToCreate.Any())
+            if (usersToCreate.Count != 0)
             {
                 _context.Users.AddRange(usersToCreate);
                 await _context.SaveChangesAsync();
             }
 
             // Log duplicates if necessary
-            if (duplicateUsers.Any())
+            if (duplicateUsers.Count != 0)
             {
                 _logger.LogWarning(
                     $"Skipped creating {duplicateUsers.Count} duplicate users: {string.Join(", ", duplicateUsers.Select(u => u.Email))}");
